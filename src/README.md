@@ -27,9 +27,12 @@ console.log('Valid?', isValid);
 This tool generates an MCP server Docker container from a given OpenAPI 3.1.1 swagger.json file. It validates the specification, creates a Docker container, and supports basic API operations and authentication flows.
 
 ## Usage
-1. Prepare your `swagger.json` file (OpenAPI 3.1.1).
+1. Prepare your OpenAPI file (OpenAPI 3.1.1), e.g. `openapi.yaml` in the project root.
 2. Build the project: `npm run build`
-3. Run the generator: `node dist/cli/generate.js <swagger.json>`
+3. Run the generator:
+	- For default usage: `npm run dev`
+	- To use a custom file: `npm run dev -- <path-to-file>`
+	- Legacy: `node dist/cli/generate.js <swagger.json>`
 
 ## Features
 - OpenAPI 3.1.1 validation

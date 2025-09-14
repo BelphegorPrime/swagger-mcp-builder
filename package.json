@@ -5,9 +5,10 @@
   "main": "src/cli/generate.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "test": "tsc && find dist/tests -name '*.test.js' | xargs node --test",
-    "lint": "eslint --ext .ts src/ tests/"
+  "build": "tsc",
+  "test": "tsc && find dist/tests -name '*.test.js' | xargs node --test",
+  "lint": "eslint --ext .ts src/ tests/",
+  "dev": "ts-node src/cli/generate.ts openapi.yaml"
   },
   "keywords": [
     "openapi",
@@ -24,7 +25,6 @@
   },
   "devDependencies": {
     "@types/dockerode": "^3.3.43",
-    "@types/mocha": "^10.0.10",
     "@types/node": "^24.3.3",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
