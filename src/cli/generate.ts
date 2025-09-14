@@ -50,13 +50,26 @@ async function main() {
     process.exit(1);
   }
 
-  // Generate Docker container
+  // Generate Docker container with default tag
   const dockerGen = new DockerGenerator();
   const config = { Image: "node:lts-alpine" };
+  // Get project name from package.json
+  let projectName = "project";
   try {
-    const container = await dockerGen.generateContainer(config);
+    const pkg = JSON.parse(fs.readFileSync("package.json", "utf-8"));
+    if (pkg.name) projectName = pkg.name;
+  } catch {}
+  // Get API name from OpenAPI spec
+  let apiName = "api";
+  if (spec && spec.info && spec.info.title) {
+    apiName = spec.info.title.replace(/\s+/g, "-").toLowerCase();
+  }
+  const defaultTag = `${projectName}:${apiName}`;
+  try {
+    const container = await dockerGen.generateContainer(config, defaultTag);
     if (container) {
       console.log("Docker container created:", container.id);
+      console.log("Tagged with:", defaultTag);
     } else {
       console.error("Error: Docker container creation failed.");
       process.exit(1);
