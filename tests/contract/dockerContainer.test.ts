@@ -1,6 +1,7 @@
 import { DockerContainer } from '../../src/models/dockerContainer.js';
 import Dockerode from 'dockerode';
 import assert from 'assert';
+import { describe, it } from 'node:test';
 
 describe('DockerContainer', () => {
   it('should generate a Docker container from config', () => {

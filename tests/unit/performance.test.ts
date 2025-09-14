@@ -1,5 +1,6 @@
 import { DockerGenerator } from '../../src/services/dockerGenerator.js';
 import assert from 'assert';
+import { describe, it } from 'node:test';
 
 describe('Performance: API call throughput', () => {
   it('should measure container creation time', async () => {

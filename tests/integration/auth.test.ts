@@ -2,6 +2,10 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import assert from 'assert';
 import path from 'path';
+import { describe, it, before, after } from 'node:test';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 describe('Integration: Authentication flows', () => {
   const swaggerPath = path.join(__dirname, 'auth-swagger.json');

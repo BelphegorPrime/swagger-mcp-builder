@@ -1,3 +1,26 @@
+## OpenAPI Validation Usage
+
+### CLI
+
+To validate an OpenAPI file (v3+):
+
+```bash
+npm run build
+node dist/cli/validateOpenapi.js path/to/openapi.yaml
+```
+
+### Service
+
+You can use the `OpenAPIValidator` service directly:
+
+```typescript
+import { OpenAPIValidator } from '../src/services/openapiValidator';
+import { OpenAPIV3_1 } from 'openapi-types';
+
+const spec: OpenAPIV3_1.Document = /* load or parse your OpenAPI spec */;
+const isValid = OpenAPIValidator.validate(spec);
+console.log('Valid?', isValid);
+```
 # MCP Server Docker Generator from Swagger (OpenAPI 3.1.1)
 
 ## Overview

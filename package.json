@@ -5,7 +5,8 @@
   "main": "src/cli/generate.ts",
   "type": "module",
   "scripts": {
-    "test": "tsc && node --test",
+    "build": "tsc",
+    "test": "tsc && find dist/tests -name '*.test.js' | xargs node --test",
     "lint": "eslint --ext .ts src/ tests/"
   },
   "keywords": [
