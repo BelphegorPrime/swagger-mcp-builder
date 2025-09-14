@@ -3,8 +3,8 @@ import { OpenAPIV3_1 } from 'openapi-types';
 
 export class SwaggerValidator {
   static validate(spec: OpenAPIV3_1.Document): boolean {
-    // Check OpenAPI version
-    if (spec.openapi !== '3.1.1') {
+    // Check OpenAPI version (accept 3.0.x and 3.1.x)
+    if (!/^3\.(0|1)\./.test(spec.openapi)) {
       console.error('[SwaggerValidator] Invalid OpenAPI version:', spec.openapi);
       return false;
     }

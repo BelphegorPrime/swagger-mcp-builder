@@ -5,10 +5,10 @@
   "main": "src/cli/generate.ts",
   "type": "module",
   "scripts": {
-  "build": "tsc",
-  "test": "tsc && find dist/tests -name '*.test.js' | xargs node --test",
-  "lint": "eslint --ext .ts src/ tests/",
-  "dev": "ts-node src/cli/generate.ts openapi.yaml"
+    "build": "tsc",
+    "test": "tsc && find dist/tests -name '*.test.js' | xargs node --test",
+    "lint": "eslint --ext .ts src/ tests/",
+  "dev": "rm -rf dist && npm run build && node dist/src/cli/generate.js openapi.yaml"
   },
   "keywords": [
     "openapi",
@@ -21,7 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "dockerode": "^3.3.0",
-    "openapi-types": "^12.0.1"
+    "openapi-types": "^12.0.1",
+    "ts-node": "^10.9.2",
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
     "@types/dockerode": "^3.3.43",

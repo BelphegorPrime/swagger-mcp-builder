@@ -3,6 +3,7 @@ import { SwaggerValidator } from '../services/swaggerValidator.js';
 import { DockerGenerator } from '../services/dockerGenerator.js';
 import { SwaggerSpec } from '../models/swaggerSpec.js';
 import fs from 'fs';
+import yaml from 'yaml';
 
 async function main() {
   let swaggerPath = process.argv[2];
@@ -21,19 +22,18 @@ async function main() {
     const fileContent = fs.readFileSync(swaggerPath, 'utf-8');
     // Try YAML first, fallback to JSON
     try {
-      // Use yaml library if available, fallback to JSON
-      // For now, check if file looks like YAML
+      // Use yaml library for .yaml/.yml files, fallback to JSON
       if (swaggerPath.endsWith('.yaml') || swaggerPath.endsWith('.yml')) {
-        // Dynamically import yaml if available
-        let yaml;
+        console.log('Parsing as YAML:', swaggerPath);
+        let yamlParser;
         try {
-          yaml = (await import('yaml')).default;
+          yamlParser = typeof require !== 'undefined' ? require('yaml') : yaml;
         } catch (e) {
-          console.error('YAML parser not installed. Run `npm install yaml` to support YAML files.');
-          process.exit(1);
+          yamlParser = yaml;
         }
-        spec = yaml.parse(fileContent);
+        spec = yamlParser.parse(fileContent);
       } else {
+        console.log('Parsing as JSON:', swaggerPath);
         spec = JSON.parse(fileContent);
       }
     } catch (parseErr) {

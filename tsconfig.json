@@ -4,11 +4,11 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "outDir": "dist",
-  "rootDir": ".",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "include": ["src", "tests"],
   "exclude": ["dist"]
