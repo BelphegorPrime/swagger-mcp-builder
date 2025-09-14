@@ -66,16 +66,17 @@ async function main() {
   }
   const defaultTag = `${projectName}:${apiName}`;
   try {
-    const container = await dockerGen.generateContainer(config, defaultTag);
-    if (container) {
-      console.log("Docker container created:", container.id);
-      console.log("Tagged with:", defaultTag);
+    const containerConfig = await dockerGen.generateContainer(config, defaultTag);
+    if (containerConfig) {
+      console.log("Docker image built and tagged as:", defaultTag);
+      console.log("To start the container, run:");
+      console.log(`  docker run -it --rm ${defaultTag}`);
     } else {
-      console.error("Error: Docker container creation failed.");
+      console.error("Error: Docker image build failed.");
       process.exit(1);
     }
   } catch (err) {
-    console.error("Error: Exception during Docker container creation:", err);
+    console.error("Error: Exception during Docker image build:", err);
     process.exit(1);
   }
 }
