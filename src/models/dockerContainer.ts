@@ -1,5 +1,5 @@
 // MCP Server Docker Container model
-import Dockerode from 'dockerode';
+import Dockerode from "dockerode";
 
 export class DockerContainer {
   config: Dockerode.ContainerCreateOptions;

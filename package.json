@@ -7,8 +7,10 @@
   "scripts": {
     "build": "tsc",
     "test": "tsc && find dist/tests -name '*.test.js' | xargs node --test",
-    "lint": "eslint --ext .ts src/ tests/",
-  "dev": "rm -rf dist && npm run build && node dist/src/cli/generate.js openapi.yaml"
+    "lint": "eslint --fix --ext .ts src/ tests/",
+    "dev": "rm -rf dist && npm run build && node dist/src/cli/generate.js openapi.yaml",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "openapi",
@@ -31,6 +33,9 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
     "typescript": "^5.0.0"
   }
 }
