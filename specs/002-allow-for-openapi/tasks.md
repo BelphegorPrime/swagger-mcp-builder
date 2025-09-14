@@ -36,7 +36,7 @@
 ---
 
 ### Setup Tasks
-T001 [P] Initialize project environment and dependencies (TypeScript, Node.js, openapi-types, ajv, Jest)
+T001 [P] Initialize project environment and dependencies (TypeScript, Node.js, openapi-types, ajv, node test runner)
 T002 [P] Set up linting and formatting (ESLint, Prettier)
 
 ### Model Tasks

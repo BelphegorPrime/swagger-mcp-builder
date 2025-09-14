@@ -1,1 +1,2 @@
-code hast to be in typescript
+code hast to be in typescript.
+use node test runner.

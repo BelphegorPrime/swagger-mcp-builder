@@ -119,7 +119,7 @@ The system will support OpenAPI specification files with version 3.0.0 or higher
 **Language/Version**: NEEDS CLARIFICATION (likely TypeScript/Node.js, confirm)
 **Primary Dependencies**: NEEDS CLARIFICATION (likely openapi-types, ajv, etc.)
 **Storage**: N/A
-**Testing**: NEEDS CLARIFICATION (likely Jest, Mocha, or similar)
+**Testing**: node test runner
 **Target Platform**: Linux server
 **Project Type**: single
 **Performance Goals**: NEEDS CLARIFICATION (e.g., process 1000 specs/minute?)

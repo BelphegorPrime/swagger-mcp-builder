@@ -21,7 +21,7 @@
 - Decision: Use openapi-types and ajv for validation.
 - Rationale: Widely adopted, well-documented, and actively maintained.
 - Alternatives considered: Custom validation logic (rejected for maintainability).
-- Decision: Use Jest for testing.
+- Decision: Use node test runner for testing.
 - Rationale: Popular in TypeScript/Node.js projects, integrates with existing test setup.
 - Alternatives considered: Mocha, Ava (no significant advantage).
 
