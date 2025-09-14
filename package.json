@@ -1,0 +1,18 @@
+{
+  "name": "mcp-server-docker-generator",
+  "version": "0.1.0",
+  "description": "Tool to generate MCP server Docker containers from OpenAPI 3.1.1 swagger.yml files",
+  "main": "src/cli/generate.ts",
+  "type": "module",
+  "scripts": {
+    "test": "tsc && node --test",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": ["openapi", "swagger", "docker", "mcp", "generator"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
