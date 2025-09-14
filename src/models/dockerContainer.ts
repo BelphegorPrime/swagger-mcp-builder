@@ -1,7 +1,10 @@
 // MCP Server Docker Container model
+import Dockerode from 'dockerode';
+
 export class DockerContainer {
-  config: any;
-  constructor(config: any) {
+  config: Dockerode.ContainerCreateOptions;
+
+  constructor(config: Dockerode.ContainerCreateOptions) {
     this.config = config;
   }
 

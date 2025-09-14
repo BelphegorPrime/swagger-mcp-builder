@@ -6,13 +6,28 @@
   "type": "module",
   "scripts": {
     "test": "tsc && node --test",
-    "lint": "echo 'No linter configured'"
+    "lint": "eslint --ext .ts src/ tests/"
   },
-  "keywords": ["openapi", "swagger", "docker", "mcp", "generator"],
+  "keywords": [
+    "openapi",
+    "swagger",
+    "docker",
+    "mcp",
+    "generator"
+  ],
   "author": "",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "dockerode": "^3.3.0",
+    "openapi-types": "^12.0.1"
+  },
   "devDependencies": {
+    "@types/dockerode": "^3.3.43",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
     "typescript": "^5.0.0"
   }
 }
